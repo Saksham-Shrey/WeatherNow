@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate {
+class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
 
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -23,6 +23,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         
         searchTextField.delegate = self
         
+        weatherManager.delegate = self              // It was not working and data was not reaching here because this current class was not set as the current/runtime delegate and hence nothing was printed as the didUpdateWeather function was not getting triggered from the WeatherManager
         
     }
     
@@ -60,6 +61,15 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
             weatherManager.fetchWeather(cityName: city)
         }
         searchTextField.text = ""
+    }
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel){
+        temperatureLabel.text = weather.temperatureString
+        
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
     }
 }
 
