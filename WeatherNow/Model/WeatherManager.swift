@@ -27,6 +27,12 @@ struct WeatherManager {
         performRequest(with: urlString)
     }
     
+    func fetchWeatherByLocation(latitude: Double, longitude: Double) {
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&units=metric&appid=\(apiKey ?? "")"
+        performRequest(with: urlString)
+    }
+    
+    
     func performRequest(with urlString: String) {
         
         if let url = URL(string: urlString) {
@@ -58,13 +64,11 @@ struct WeatherManager {
             let name = decodedData.name
             
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
-//            print("\(name) : \(id) : \(weather.conditionName) : \(weather.temperatureString)")
             return weather
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
         }
     }
-    
 }
 

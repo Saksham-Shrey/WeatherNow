@@ -34,6 +34,9 @@
                                                 </constraints>
                                                 <color key="tintColor" name="WeatherColor"/>
                                                 <state key="normal" backgroundImage="location.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GC1-4c-hHs"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2eh-wL-W34">
                                                 <rect key="frame" x="50" y="0.0" width="253" height="40"/>
@@ -135,13 +138,13 @@
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="sun.max" catalog="system" width="128" height="125"/>
         <namedColor name="WeatherColor">
-            <color red="0.13987934590000001" green="0.042594499889999998" blue="0.064160741869999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14000000059604645" green="0.043000001460313797" blue="0.064000003039836884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

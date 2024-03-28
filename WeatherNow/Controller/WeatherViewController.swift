@@ -11,6 +11,12 @@ import CoreLocation
 
 class WeatherViewController: UIViewController {
 
+    
+    @IBAction func locationButtonPressed(_ sender: UIButton) {
+        weatherManager.fetchWeatherByLocation(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!)
+    }
+    
+    
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -24,7 +30,7 @@ class WeatherViewController: UIViewController {
         super.viewDidLoad()
         
         locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
         
         searchTextField.delegate = self
         
@@ -92,3 +98,6 @@ extension WeatherViewController: WeatherManagerDelegate {
         print(error)
     }
 }
+
+
+
