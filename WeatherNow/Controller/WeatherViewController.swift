@@ -30,6 +30,7 @@ class WeatherViewController: UIViewController {
         
         
         locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         locationManager.requestLocation()
         
         searchTextField.delegate = self
@@ -119,7 +120,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        print(error)
     }
 }
 
