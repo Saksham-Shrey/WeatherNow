@@ -11,7 +11,7 @@ Weather Now is a mobile application built using Swift and UIKit that allows user
 
 ## Features
 
-- Current Weather: Display current weather conditions such as temperature, humidity, wind speed, and weather description.
+- Current Weather: Display live weather conditions..
 - Location Detection: Utilize Core Location to automatically detect the user's current location for weather information.
 - Search Functionality: Allow users to search for weather information by entering the name of a city or location.
 
